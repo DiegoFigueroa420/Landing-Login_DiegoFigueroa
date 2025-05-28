@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+html {
+  font-size: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('33408.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+}
+
+/* Contenedor principal */
+main {
+  flex: 1;
+  max-width: 1100px;
+  margin: 2rem auto 3rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+main h1 {
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: white;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+/* Botón Login fijo a la izquierda */
+.login-button {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  color: #fff;
+  padding: 1rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  border-radius: 0 1rem 1rem 0;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.login-button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Contenedor de tarjetas */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Tarjeta */
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  width: 280px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+/* Imagen en la tarjeta */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-content h3 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: snow;
+}
+
+.card-content p {
+  font-weight: 400;
+  flex-grow: 1;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: cornsilk;
+}
+
+/* Botón dentro de la tarjeta */
+.card-content button {
+  align-self: flex-start;
+  background-color: #ffd700;
+  color: #333;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+  transition: background-color 0.3s ease;
+}
+
+.card-content button:hover {
+  background-color: #e6c200;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    position: fixed;
+    left: 0;
+    top: 5%;
+    transform: translateY(-50%);
+    color: #fff;
+    padding: 10px;
+    text-orientation: mixed;
+    border-radius: 0 1rem 1rem 0;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0 1rem 1rem 0;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+  }
+
+  .dropdown :hover{
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 160px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+    pointer-events: none;
+    border-radius: 0.5rem;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    color: #fff;
+    
+  }
+
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .dropdown-content a {
+    color: #374151;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background: #f3f4f6;
+  }
+.btn-pulse{
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    color: #fff;
+    padding: 20px;
+    margin: 10px
+    
+}
+.wrapper{
+    margin-top: 2.5rem;
+    width: 27rem;
+    background-color: transparent;
+    border: 0.125rem solid rgba(173, 168, 168);
+    backdrop-filter: blur(0.94rem);
+    box-shadow: 0 0 0.625rem black;
+    color: white;
+    border-radius: 0.90rem;
+    padding: 1.25rem 1.875rem;
+}
+
+.wrapper .input-box{
+    width: 100%;
+    height: 3.125rem;
+    position: relative;
+    margin: 1.875rem 0;
+}
+
+.wrapper h1{
+    font-size: 1.875rem;
+    text-align: center;
+}
+
+.input-box input{
+    width:100%;
+    height: 100%;
+    padding: 1.25rem 2.9rem 1.25rem 1.25rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color:aliceblue;
+    border: 0.125rem solid rgba(173, 168, 168,0.2);
+    border-radius: 2.5rem;
+    font-size: 1rem;
+}
+
+.input-box i{
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+}
+
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    margin: -0.3rem 0 0.3rem;
+}
+
+.remember-forgot label input{
+    accent-color: aliceblue;
+    margin-right: 0.1875rem;
+}
+
+.remember-forgot a{
+    color:aliceblue;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.wrapper .btn{
+    width: 100%;
+    height: 2.9rem;
+    background-color: aliceblue;
+    border: none;
+    outline: none;
+    border-radius: 2.5rem;
+    box-shadow: 0 0 0.7rem rgba(0, 0 , 0, 0.2);
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.wrapper .register-link{
+    text-align: center;
+    color: aliceblue;
+    font-size: 0.875rem;
+
+}
+.wrapper .register-link p a{
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: 700;
+}
+
+.wrapper .register-link p a:hover{
+    text-decoration: underline;
+}
+
+.VOLVER-LOGIN{
+    text-align: center;
+}
+
+.VOLVER-LOGIN a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.VOLVER-LOGIN a:hover{
+    text-decoration: underline;
+}
